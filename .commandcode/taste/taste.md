@@ -1,0 +1,2 @@
+- Grants the assistant wide autonomy to scan/read project files ("you can scan all the file if you wanted") rather than restricting access; prefers let-it-explore workflows over narrowly scoped instructions. Confidence: 0.7
+- Gives concise, informal, lowercase instructions and is comfortable with the assistant inferring and elaborating content (descriptions, feature names, captions, takeaways) when exact details aren't supplied, rather than demanding clarification. Confidence: 0.55
