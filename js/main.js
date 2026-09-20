@@ -1,5 +1,5 @@
 /* =============================================
-   MAIN.JS — Navigation, Scroll Reveal, Mobile Menu
+   MAIN.JS: Navigation, Scroll Reveal, Mobile Menu
    ============================================= */
 
 (function () {

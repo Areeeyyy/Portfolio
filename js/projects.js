@@ -1,5 +1,5 @@
 /* =============================================
-   PROJECTS.JS — Markdown Loader, Parser & Renderer
+   PROJECTS.JS: Markdown Loader, Parser & Renderer
    Handles both Projects and Certifications
    ============================================= */
 

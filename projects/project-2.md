@@ -15,24 +15,24 @@ featured: true
 ![Web App Interface Preview](/assets/image/pneumonia_detection (1).png)
 *Preview of the web interface predicting a chest X-ray scan.*
 
-Developed a web-based medical image classification system designed to detect pneumonia from chest X-ray images. The core intelligence is powered by a Convolutional Neural Network (CNN) model that automates the extraction of features from medical scans, classifying them to assist in rapid and accurate diagnosis.
+Built a small web app that takes a chest X-ray and predicts whether it shows signs of pneumonia. The classification model is a Convolutional Neural Network I trained in TensorFlow; the web layer is a thin Flask/Streamlit frontend that handles the file upload.
 
 ## Key Features
 
-- **Advanced Image Processing** — Engineered a CNN architecture to process, extract features, and classify complex medical X-ray images.
-- **Web-Based Interface** — Integrated the machine learning model into a user-friendly web application, allowing users to easily upload X-ray images and receive instant predictions.
-- **Data Preparation Pipeline** — Built an automated preprocessing pipeline to handle image resizing, normalization, and augmentation, ensuring the unstructured data is perfectly formatted for the model.
-- **Performance Evaluation** — Evaluated model performance using standard validation metrics to ensure reliable and consistent classification results.
+- **CNN classifier**: A from-scratch convolutional architecture that takes a resized chest X-ray and outputs a normal / pneumonia prediction.
+- **Upload and predict**: A page where a user drops in an image and gets the model's verdict plus a confidence number, without touching Python.
+- **Preprocessing pipeline**: Resize, normalize to `[0, 1]`, and apply augmentation on the training set so the model sees more variety than the raw dataset offers.
+- **Validation metrics**: Precision, recall, and a confusion matrix logged after each training run, not just accuracy.
 
 ## Technical Highlights
 
 | Component | Technology | Details |
 |-----------|-----------|---------|
-| **Model** | Python + TensorFlow/Keras | Built and trained the Convolutional Neural Network |
-| **Data Prep** | NumPy + OpenCV/PIL | Image augmentation, normalization, and reshaping |
-| **Web App** | Flask / Streamlit | Backend API and frontend interface for image upload |
-| **Deployment**| Local / Cloud | Served the ML model for real-time inference |
+| **Model** | Python + TensorFlow/Keras | CNN trained on labeled X-ray images |
+| **Data Prep** | NumPy + OpenCV/PIL | Resize, normalize, augment |
+| **Web App** | Flask / Streamlit | File upload + prediction route |
+| **Deployment** | Local / Cloud | Model served behind the web app |
 
 ## What I Learned
 
-This project solidified my understanding of the end-to-end machine learning lifecycle, from data readiness to model deployment. I gained valuable experience in handling unstructured data (images), preparing complex datasets for deep learning architectures, and bridging the gap between data processing and practical AI applications.
+The biggest lesson was about class imbalance. My first training run reported 92% accuracy and looked great until I plotted the confusion matrix: the model was predicting "pneumonia" on almost every image because that was the easier way to be right. After I switched the loss weighting and reported recall per class instead of plain accuracy, the same architecture produced a much more honest model. That single change taught me more about evaluation than any textbook chapter.

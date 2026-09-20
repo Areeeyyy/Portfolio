@@ -1,11 +1,11 @@
 /* =============================================
-   PORTFOLIO — Design System & Styles
+   PORTFOLIO: Design System & Styles
    Light + Dark Theme
    ============================================= */
 
 /* ---- CSS Custom Properties ---- */
 :root {
-    /* Colors — Light (default) */
+    /* Colors: Light (default) */
     --bg-primary: #FAFBFC;
     --bg-secondary: #F1F5F9;
     --bg-card: #FFFFFF;
